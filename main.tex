@@ -1,0 +1,39 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% 日本語
+\usepackage{luatexja}
+
+% 数式
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% 図
+\usepackage{graphicx}
+
+% 表
+\usepackage{booktabs}
+
+% テーマ
+% \usetheme{Madrid}
+\usetheme{metropolis}
+
+% ナビゲーションマークを消す
+\setbeamertemplate{navigation symbols}{}
+
+% 大項目の番号
+\setbeamercolor{enumerate item}{fg=red}
+\setbeamertemplate{enumerate item}{
+  \color{red}\insertenumlabel.
+}
+
+% 小項目の三角
+\setbeamercolor{itemize item}{fg=red}
+\setbeamercolor{itemize subitem}{fg=red}
+
+\setbeamertemplate{itemize item}{
+  \color{red}\small$\blacktriangleright$
+}
+
+\setbeamertemplate{itemize subitem}{
+  \color{red}\small$\blacktriangleright$
+}
