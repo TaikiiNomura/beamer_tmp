@@ -1,4 +1,8 @@
-\documentclass[aspectratio=169,11pt]{beamer}
+% !TeX program = lualatex
+
+% 画面比16:9
+% \documentclass[aspectratio=169,11pt]{beamer}
+\documentclass[aspectratio=43,11pt]{beamer}
 
 % 日本語
 \usepackage{luatexja}
@@ -7,33 +11,74 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
-% 図
-\usepackage{graphicx}
+% スライドのテーマ
+\usetheme{Madrid}
+\usecolortheme{whale}
 
-% 表
-\usepackage{booktabs}
+% ===============================================
+% これより上は編集禁止
+% ===============================================
 
-% テーマ
-% \usetheme{Madrid}
-\usetheme{metropolis}
+\title{beamerテンプレート}
+\author{野村　太暉}
+\date{\today}
 
-% ナビゲーションマークを消す
-\setbeamertemplate{navigation symbols}{}
+\begin{document}
 
-% 大項目の番号
-\setbeamercolor{enumerate item}{fg=red}
-\setbeamertemplate{enumerate item}{
-  \color{red}\insertenumlabel.
-}
+\maketitle
 
-% 小項目の三角
-\setbeamercolor{itemize item}{fg=red}
-\setbeamercolor{itemize subitem}{fg=red}
+\begin{frame}{新規スライド}
+    frame: 新しいスライドを作成
+\end{frame}
 
-\setbeamertemplate{itemize item}{
-  \color{red}\small$\blacktriangleright$
-}
+\begin{frame}{箇条書き}
+    \begin{itemize}
+        \item itemize: 箇条書き
+        \begin{itemize}
+            \item itemizie 内に itemize を入れることも可能
+            \footnotemark
+        \end{itemize}
+    \end{itemize}
 
-\setbeamertemplate{itemize subitem}{
-  \color{red}\small$\blacktriangleright$
-}
+    \begin{enumerate}
+        \item enumerate: 連番で表示
+        \item オプションをつけると好きなように変えられる
+        \begin{enumerate}
+            \item [A] [A]を指定
+            \item [(1)] [(1)]を指定
+        \end{enumerate}
+    \end{enumerate}
+
+    \footnotetext{
+        footnotetext: スライド下部に注釈
+    }
+\end{frame}
+
+\begin{frame}{数式}
+    1. equation: 単一の行で式番号あり
+    \begin{equation}
+        f(x) = a x^2 + b x + c
+    \end{equation}
+
+    2. align: 複数行で、行ごとに式番号あり
+    \begin{align}
+        x + y &= 5 \\
+        2x - y &= 1
+    \end{align}
+
+    3. align*: 複数行で、式番号なし（Beamerで最頻出）
+    \begin{align*}
+        (x+1)^2 &= x^2 + 2x + 1 \\
+                &= (x^2 + 1) + 2x
+    \end{align*}
+
+    4. equation + aligned: 複数行を綺麗に揃えつつ、全体で「1つの式番号」にする
+    \begin{equation}
+        \begin{aligned}
+            A &= B + C \\
+              &= D
+        \end{aligned}
+    \end{equation}
+\end{frame}
+
+\end{document}
